@@ -1,6 +1,7 @@
 <p>C14180222 - William Evan Budiawan</p>
 <input type="date" id="datePertama">
-<button onclick="countDays()">Count Dates</button>
+<input type="date" id="dateKedua">
+<button onclick="countDateIntervals()">Count Dates</button>
 <p id="result">xxxx</p>
 <script>  
     function countDays() {
@@ -16,5 +17,15 @@
 
         var result = timeDiff / (24 * 3600 * 1000);  
         return document.getElementById("result").innerHTML = result + " days between date 1 and today. ";  
+    }
+    function countDateIntervals() {    
+        var date1 = document.getElementById("datePertama").value;  
+        var date2 = document.getElementById("dateKedua").value;
+        var myDate1 = new Date(date1);  
+        var myDate2 = new Date(date2);
+        var timeDiff = myDate2.getTime() - myDate1.getTime();  
+
+        var result = timeDiff / (24 * 3600 * 1000);  
+        return document.getElementById("result").innerHTML = result + " days between date 1 and date 2. ";  
     }
    </script>
