@@ -1,1 +1,20 @@
 <p>C14180222 - William Evan Budiawan</p>
+<input type="date" id="datePertama">
+<button onclick="countDays()">Count Dates</button>
+<p id="result">xxxx</p>
+<script>  
+    function countDays() {
+        today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January = 0
+        var yyyy = today.getFullYear();    
+        var date1 = document.getElementById("datePertama").value;  
+
+        var myDate1 = new Date(date1);  
+
+        var timeDiff = today.getTime() - myDate1.getTime();  
+
+        var result = timeDiff / (24 * 3600 * 1000);  
+        return document.getElementById("result").innerHTML = result + " days between date 1 and today. ";  
+    }
+   </script>
